@@ -1,6 +1,6 @@
 # `cabal-targets` #
 
-List the targets in a Cabal project
+List the targets in a Cabal project, using the [cabal-plan](https://hackage.haskell.org/package/cabal-plan) library
 
 ## Synopsis ##
 
