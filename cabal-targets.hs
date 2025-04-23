@@ -1,4 +1,4 @@
-#!/usr/bin/env cabal
+#!/usr/bin/env -S cabal run -v0 --
 {- cabal:
   build-depends:
     base, cabal-plan, containers, directory,
