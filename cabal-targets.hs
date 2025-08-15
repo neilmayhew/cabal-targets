@@ -29,6 +29,7 @@ import qualified System.Console.Terminal.Size as TS
 data Options = Options
   { optProjectDir :: FilePath
   , optCompTypes :: [CompType]
+  , optPackages :: [Text]
   }
   deriving (Show)
 
@@ -60,10 +61,15 @@ parseArgs = do
                   <> short 'x'
                   <> long "exclude"
                   <> metavar "TYPE"
+            packages <-
+              many . strArgument $
+                help "Show targets for PACKAGE ... (default: all packages)"
+                  <> metavar "PACKAGE ..."
             pure
               Options
                 { optProjectDir = project
                 , optCompTypes = (if null include then allCompTypes else include) \\ exclude
+                , optPackages = packages
                 }
         )
         (fullDesc <> header "List the targets in a Cabal project")
@@ -101,6 +107,7 @@ main = do
     | u <- Map.elems $ pjUnitsWithType UnitTypeLocal plan
     , c <- Map.keys $ uComps u
     , compType c `elem` optCompTypes
+    , null optPackages || (unPkgName . pIdName . uPId) u `elem` optPackages
     ]
 
 data CompType
