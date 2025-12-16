@@ -16,7 +16,7 @@ Available options:
 
 ## Installation ##
 
-Run `cabal install`.
+Run `cabal install` or `nix profile add`.
 
 ## Use ##
 
