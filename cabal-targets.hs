@@ -1,13 +1,3 @@
-#!/usr/bin/env -S cabal run -v0 --
-{- cabal:
-  build-depends:
-    base, cabal-plan, containers, directory,
-    optparse-applicative, terminal-size, text
-  ghc-options: -Wall -Wcompat -Wunused-packages
--}
-{- project:
-  allow-newer: cabal-plan:*
--}
 {-# LANGUAGE ApplicativeDo #-}
 {-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE OverloadedStrings #-}

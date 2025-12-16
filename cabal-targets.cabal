@@ -1,0 +1,30 @@
+cabal-version: 3.4
+name: cabal-targets
+version: 1.0.0.0
+synopsis: List the targets in a Cabal project
+homepage: https://github.com/neilmayhew/cabal-targets
+license: MIT
+license-file: LICENSE
+author: Neil Mayhew
+maintainer: neil@mayhew.name
+category: Development
+extra-doc-files: CHANGELOG.md
+
+common warnings
+  ghc-options:
+    -Wall
+    -Wcompat
+    -Wunused-packages
+
+executable cabal-targets
+  import: warnings
+  main-is: cabal-targets.hs
+  default-language: Haskell2010
+  build-depends:
+    base,
+    cabal-plan,
+    containers,
+    directory,
+    optparse-applicative,
+    terminal-size,
+    text,

@@ -16,7 +16,7 @@ Available options:
 
 ## Installation ##
 
-Copy `cabal-targets.hs` to a file named `cabal-targets` in a directory somewhere on your `PATH`, and make sure it's executable.
+Run `cabal install`.
 
 ## Use ##
 
